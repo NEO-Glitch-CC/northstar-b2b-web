@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #F9F9F7;
+  --foreground: #111111;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--background);
+  color: var(--foreground);
+  scroll-behavior: auto;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    linear-gradient(to right, rgba(17, 17, 17, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(17, 17, 17, 0.045) 1px, transparent 1px),
+    var(--background);
+  background-size: calc(100vw / 12) calc(100vw / 12);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  text-rendering: geometricPrecision;
+}
+
+html.nav-menu-open,
+html.nav-menu-open body {
+  height: 100%;
+  overflow: hidden;
+}
+
+::selection {
+  background: #111111;
+  color: #F9F9F7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.line-mask {
+  display: block;
+  overflow: hidden;
+}
+
+.reveal-line {
+  display: block;
+  will-change: transform;
+}
+
+.grid-draw-x,
+.grid-draw-y {
+  transform-origin: left center;
+  will-change: transform;
+}
+
+.grid-draw-y {
+  transform-origin: top center;
+}
+
+.entrance-panel {
+  will-change: transform;
+}
+
+.marquee-track {
+  width: max-content;
+  will-change: transform;
+}
