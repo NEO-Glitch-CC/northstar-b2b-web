@@ -47,7 +47,7 @@ export default function Entrance() {
       ))}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center px-5">
         <div className="overflow-hidden">
-          <p className="entrance-word font-display text-[18vw] leading-[0.82] tracking-[0]">Northstar</p>
+          <p className="entrance-word font-display text-[15vw] leading-[0.82] tracking-[0]">Northstar</p>
         </div>
       </div>
       <div className="absolute bottom-6 left-5 right-5 flex justify-between text-micro font-bold uppercase text-inverse/50 md:left-8 md:right-8">

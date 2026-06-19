@@ -97,7 +97,7 @@ export default function Features() {
       <div className="mx-auto max-w-[1600px] border-x border-line">
         <div className="grid gap-8 border-b border-line p-5 md:grid-cols-[0.8fr_1.2fr] md:p-8">
           <p className="text-micro font-bold uppercase text-muted">Features / operating clarity</p>
-          <h2 className="max-w-5xl font-display text-display-lg">
+          <h2 className="max-w-5xl font-display text-display-md">
             A strict system for teams outgrowing improvisation.
           </h2>
         </div>

@@ -77,7 +77,7 @@ export default function Hero() {
         <div className="flex flex-col justify-between border-b border-line p-5 md:p-8 lg:border-b-0 lg:border-r">
           <div className="grid gap-8">
             <p className="hero-meta text-micro font-bold uppercase text-muted">B2B operating infrastructure / 2026</p>
-            <h1 className="font-display text-display-xl">
+            <h1 className="font-display text-display-lg">
               <span className="line-mask">
                 <span className="reveal-line">Scale</span>
               </span>

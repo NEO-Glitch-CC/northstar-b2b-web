@@ -4,6 +4,8 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import OwnerImage from "../../assets/owner.jpg";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -55,22 +57,23 @@ export default function About() {
   );
 
   return (
-    <section id="about" ref={scope} className="overflow-hidden border-b border-line px-5 py-24 md:px-8 md:py-38">
+    <section id="about" ref={scope} className="overflow-hidden border-b border-line px-5 md:px-8">
       <div className="mx-auto grid max-w-[1600px] border-x border-line lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="relative min-h-[620px] border-b border-line p-5 md:p-8 lg:border-b-0 lg:border-r">
-          <div className="about-portrait sticky top-28 h-[520px] border border-charcoal bg-charcoal text-inverse">
-            <div className="absolute inset-0 grid grid-cols-4">
+        <div className="py-[12rem] relative min-h-[680px] border-b border-line px-5 md:px-8 lg:border-b-0 lg:border-r">
+          <div className="about-portrait relative h-[468px] md:h-[664px] bg-charcoal text-inverse">
+            <Image src={OwnerImage} alt="Owner Image" height={720} width={480} className="w-full h-full object-cover" />
+            <div className="absolute z-2 inset-0 grid grid-cols-4">
               {[0, 1, 2, 3].map((item) => (
-                <span key={item} className="border-r border-inverse/12 last:border-r-0" />
+                <span key={item} className="border-r border-inverse/20 last:border-r-0" />
               ))}
             </div>
-            <div className="relative flex h-full flex-col justify-between p-5 md:p-8">
-              <div className="flex justify-between text-micro font-bold uppercase text-inverse/54">
+            <div className="flex h-auto flex-col justify-between p-5 md:p-8 bg-charcoal">
+              <div className="flex justify-between text-micro font-bold uppercase text-inverse/54 mb-4">
                 <span>Founder profile</span>
                 <span>01</span>
               </div>
               <div>
-                <p className="font-display text-7xl leading-none md:text-8xl">Alya Renata</p>
+                <p className="font-display text-7xl leading-none md:text-8xl">Marcus Reyman Jr.</p>
                 <p className="mt-5 max-w-md text-sm leading-6 text-inverse/62">
                   Former operating partner and systems architect for B2B scale-ups across SEA and the US.
                 </p>
@@ -79,9 +82,9 @@ export default function About() {
           </div>
         </div>
 
-        <div className="p-5 md:p-8">
+        <div className="py-[12rem] px-5 md:px-8">
           <p className="mb-8 text-micro font-bold uppercase text-muted">About the company</p>
-          <h2 className="max-w-5xl font-display text-display-lg">
+          <h2 className="max-w-5xl font-display text-display-md">
             Built by operators who prefer systems over spectacle.
           </h2>
           <div className="mt-12 grid gap-8 text-body-xl text-charcoal/72 md:grid-cols-2">
