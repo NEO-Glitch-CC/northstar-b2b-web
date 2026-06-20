@@ -66,7 +66,7 @@ export default function Simulator() {
         <div className="flex flex-col justify-between gap-12 border border-inverse/18 p-5 md:p-8">
           <div>
             <p className="mb-6 text-micro font-bold uppercase text-inverse/54">Scale simulator</p>
-            <h2 className="font-display text-display-lg">Model the next operating layer.</h2>
+            <h2 className="font-display text-display-md">Model the next operating layer.</h2>
           </div>
           <div className="grid gap-3">
             {Object.entries(tiers).map(([key, tier]) => (

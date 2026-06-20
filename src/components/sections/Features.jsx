@@ -34,7 +34,7 @@ export default function Features() {
       const ctx = gsap.context(() => {
         gsap.set(".grid-draw-x", { scaleX: 0 });
         gsap.set(".grid-draw-y", { scaleY: 0 });
-        gsap.set(".feature-card", { autoAlpha: 0, y: 64 });
+        gsap.set(".feature-card", { autoAlpha: 0, y: 24 });
 
         gsap
           .timeline({
@@ -65,10 +65,9 @@ export default function Features() {
             ".feature-card",
             {
               autoAlpha: 1,
-              y: 0,
+              y: -20,
               duration: 0.9,
               ease: "power3.out",
-              stagger: 0.12
             },
             "-=0.55"
           );
@@ -93,16 +92,16 @@ export default function Features() {
   );
 
   return (
-    <section ref={scope} id="method" className="relative overflow-hidden border-b border-line px-5 py-24 md:px-8 md:py-38">
-      <div className="mx-auto max-w-[1600px] border-x border-line">
-        <div className="grid gap-8 border-b border-line p-5 md:grid-cols-[0.8fr_1.2fr] md:p-8">
+    <section ref={scope} id="method" className="relative overflow-hidden border-b border-line px-5 pb-24 md:px-8 md:pb-38">
+      <div className="mx-auto max-w-[1600px] border-x border-line pt-24">
+        <div className="grid gap-8 p-5 md:grid-cols-[0.8fr_1.2fr] md:p-8">
           <p className="text-micro font-bold uppercase text-muted">Features / operating clarity</p>
           <h2 className="max-w-5xl font-display text-display-md">
             A strict system for teams outgrowing improvisation.
           </h2>
         </div>
 
-        <div className="relative">
+        <div className="relative overflow-hidden">
           <GridLine className="absolute left-0 top-0" />
           <GridLine className="absolute bottom-0 left-0" />
           <div className="absolute left-1/3 top-0 hidden h-full md:block">
@@ -116,7 +115,7 @@ export default function Features() {
             {features.map((feature) => (
               <article
                 key={feature.title}
-                className="feature-card group min-h-[430px] border-b border-line p-5 transition-colors duration-500 ease-editorial hover:bg-charcoal hover:text-inverse md:border-b-0 md:p-8"
+                className="feature-card group min-h-[480px] border-b border-line p-5 transition-colors duration-500 ease-editorial hover:bg-charcoal hover:text-inverse md:border-b-0 md:p-8"
               >
                 <div className="flex h-full flex-col justify-between gap-16">
                   <p className="text-micro font-bold uppercase text-muted transition-colors duration-500 group-hover:text-inverse/58">

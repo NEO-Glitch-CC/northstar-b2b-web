@@ -73,7 +73,7 @@ export default function Hero() {
       id="platform"
       className="relative min-h-screen overflow-hidden border-b border-line px-5 pt-[76px] md:px-8 md:pt-20"
     >
-      <div className="mx-auto grid min-h-[calc(100vh-8rem)] max-w-[1600px] grid-cols-1 border-x border-line lg:grid-cols-[1.25fr_0.75fr]">
+      <div className="mx-auto grid min-h-[calc(100vh-77px)] max-w-[1600px] grid-cols-1 border-x border-line lg:grid-cols-[1.25fr_0.75fr]">
         <div className="flex flex-col justify-between border-b border-line p-5 md:p-8 lg:border-b-0 lg:border-r">
           <div className="grid gap-8">
             <p className="hero-meta text-micro font-bold uppercase text-muted">B2B operating infrastructure / 2026</p>

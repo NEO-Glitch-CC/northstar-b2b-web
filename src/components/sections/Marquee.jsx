@@ -36,7 +36,7 @@ export default function Marquee() {
           Companies and operators we are built to collaborate with
         </p>
       </div>
-      <div className="marquee-track flex py-7">
+      <div className="marquee-track flex py-7 bg-paper">
         {list.map((company, index) => (
           <div
             key={`${company}-${index}`}

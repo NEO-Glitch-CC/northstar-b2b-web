@@ -58,11 +58,11 @@ export default function Testimonials() {
   );
 
   return (
-    <section id="testimonials" ref={scope} className="border-b border-line px-5 py-24 md:px-8 md:py-38">
-      <div className="mx-auto max-w-[1600px] border-x border-line">
+    <section id="testimonials" ref={scope} className="border-b border-line px-5 md:px-8">
+      <div className="mx-auto pt-24 max-w-[1600px] border-x border-line">
         <div className="grid gap-8 border-b border-line p-5 md:grid-cols-[0.8fr_1.2fr] md:p-8">
           <p className="text-micro font-bold uppercase text-muted">Testimonials / field notes</p>
-          <h2 className="max-w-5xl font-display text-display-lg">Proof from teams operating under pressure.</h2>
+          <h2 className="max-w-5xl font-display text-display-md">Proof from teams operating under pressure.</h2>
         </div>
 
         <div className="grid md:grid-cols-3">

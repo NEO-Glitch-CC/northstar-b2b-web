@@ -9,7 +9,7 @@ export default function CTA() {
       <div className="mx-auto grid max-w-[1600px] gap-12 border border-inverse/18 p-5 md:p-8 lg:grid-cols-[1.25fr_0.75fr]">
         <div>
           <p className="mb-8 text-micro font-bold uppercase text-inverse/50">Final call / board-ready operations</p>
-          <h2 className="max-w-6xl font-display text-display-lg">
+          <h2 className="max-w-6xl font-display text-display-md">
             Build the operating system your next stage already requires.
           </h2>
         </div>
