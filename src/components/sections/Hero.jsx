@@ -4,6 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Button from "../UI/Button";
+import NorthStarPhoneMockup from "../common/MobileScreen";
 
 gsap.registerPlugin(useGSAP);
 
@@ -79,7 +80,7 @@ export default function Hero() {
             <p className="hero-meta font-mono text-micro font-bold uppercase text-muted">
               B2B operating infrastructure / 2026 / 정밀한 시스템
             </p>
-            <h1 className="font-display text-display-lg">
+            <h1 className="font-display font-semibold text-display-lg">
               <span className="line-mask">
                 <span className="reveal-line">Scale</span>
               </span>
@@ -108,7 +109,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div
+        {/* <div
           className="relative min-h-[520px] p-5 md:p-8"
           onPointerMove={handlePointerMove}
           onPointerLeave={handlePointerLeave}
@@ -138,7 +139,9 @@ export default function Hero() {
             </div>
             <div className="absolute right-[18%] top-[18%] h-24 w-24 rounded-full border border-signal" />
           </div>
-        </div>
+        </div> */}
+        
+        <NorthStarPhoneMockup />
       </div>
     </section>
   );
