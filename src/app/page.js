@@ -11,6 +11,8 @@ import Simulator from "../components/sections/Simulator";
 import Testimonials from "../components/sections/Testimonials";
 import QNA from "../components/sections/QNA";
 import CTA from "../components/sections/CTA";
+import Pricing from "../components/sections/Pricing";
+import Integrations from "../components/sections/Integrations";
 
 export default function HomePage() {
   return (
@@ -23,7 +25,9 @@ export default function HomePage() {
       <Marquee />
       <About />
       <Features />
+      <Integrations />
       <Simulator />
+      <Pricing />
       <Testimonials />
       <QNA />
       <CTA />
