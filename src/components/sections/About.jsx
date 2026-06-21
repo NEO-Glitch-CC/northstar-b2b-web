@@ -59,14 +59,9 @@ export default function About() {
   return (
     <section id="about" ref={scope} className="overflow-hidden border-b border-line px-5 md:px-8">
       <div className="mx-auto grid max-w-[1600px] border-x border-line lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="py-[12rem] relative min-h-[680px] border-b border-line px-5 md:px-8 lg:border-b-0 lg:border-r">
+        <div className="py-8 md:py-[12rem] relative min-h-[680px] border-b border-line px-5 md:px-8 lg:border-b-0 lg:border-r">
           <div className="about-portrait relative h-[468px] md:h-[664px] bg-charcoal text-inverse">
             <Image src={OwnerImage} alt="Owner Image" height={720} width={480} className="w-full h-full object-cover" />
-            <div className="absolute z-2 inset-0 grid grid-cols-4">
-              {[0, 1, 2, 3].map((item) => (
-                <span key={item} className="border-r border-inverse/20 last:border-r-0" />
-              ))}
-            </div>
             <div className="flex h-auto flex-col justify-between p-5 md:p-8 bg-charcoal">
               <div className="flex justify-between text-micro font-bold uppercase text-inverse/54 mb-4">
                 <span>Founder profile / 창업자</span>
@@ -115,7 +110,7 @@ export default function About() {
           <div className="mt-12 grid gap-3">
             {collaborators.map((item) => (
               <div key={item} className="flex items-center justify-between border-t border-line py-5">
-                <span className="text-2xl md:text-4xl">{item}</span>
+                <span className="text-xl sm:text-2xl md:text-4xl">{item}</span>
                 <span className="text-micro font-bold uppercase text-muted">Collaborator</span>
               </div>
             ))}

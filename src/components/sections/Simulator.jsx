@@ -577,7 +577,7 @@ export default function Simulator() {
 
       {/* GUIDE PANEL */}
       {showGuide && (
-        <div className="guide-panel fixed top-0 right-0 h-full w-full md:w-[420px] bg-neutral-950 border-l border-white/10 z-50 p-8 overflow-y-auto">
+        <div className="guide-panel fixed top-0 right-0 h-full w-full md:w-[480px] bg-neutral-950 border-l border-white/10 z-[100] p-8 overflow-y-auto">
           <button
             onClick={() => setShowGuide(false)}
             className="absolute top-6 right-6 w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white hover:border-amber-400 hover:text-amber-400 transition-colors"

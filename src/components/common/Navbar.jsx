@@ -188,7 +188,7 @@ export default function Navbar() {
   return (
     <>
       <header ref={headerRef} className="fixed left-0 top-0 z-[90] w-full border-b border-line bg-bone/78 backdrop-blur-xl">
-        <nav className="relative mx-auto flex justify-between max-w-[1600px] items-center px-5 py-4 md:px-8">
+        <nav className="relative mx-auto flex justify-between max-w-[1600px] items-center px-5 py-2 md:px-8">
           <a ref={logoRef} href="#" className="relative z-[92] font-display text-2xl leading-none">
             Northstar
           </a>

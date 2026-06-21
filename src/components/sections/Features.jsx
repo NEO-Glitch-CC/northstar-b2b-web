@@ -92,8 +92,8 @@ export default function Features() {
   );
 
   return (
-    <section ref={scope} id="method" className="relative overflow-hidden border-b border-line px-5 pb-24 md:px-8 md:pb-38">
-      <div className="mx-auto max-w-[1600px] border-x border-line pt-24">
+    <section ref={scope} id="method" className="relative overflow-hidden border-b border-line px-5 md:px-8">
+      <div className="mx-auto max-w-[1600px] border-x border-line py-8 sm:py-12 md:py-24">
         <div className="grid gap-8 p-5 md:grid-cols-[0.8fr_1.2fr] md:p-8">
           <p className="font-mono text-micro font-bold uppercase text-muted">Features / operating clarity / 구조</p>
           <h2 className="max-w-5xl font-display text-display-md">
@@ -101,7 +101,7 @@ export default function Features() {
           </h2>
         </div>
 
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden border-b border-line">
           <GridLine className="absolute left-0 top-0" />
           <GridLine className="absolute bottom-0 left-0" />
           <div className="absolute left-1/3 top-0 hidden h-full md:block">
