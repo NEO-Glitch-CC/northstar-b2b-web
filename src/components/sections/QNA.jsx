@@ -48,13 +48,13 @@ export default function QNA() {
   };
 
   return (
-    <section id="qna" className="border-b border-line bg-bone px-5 py-24 md:px-8 md:py-38">
-      <div className="mx-auto grid max-w-[1600px] border-x border-line lg:grid-cols-[0.72fr_1.28fr]">
-        <div className="border-b border-line p-5 md:p-8 lg:border-b-0 lg:border-r">
+    <section id="qna" className="border-b border-line bg-bone px-5 md:px-8">
+      <div className="py-24 md:py-38 mx-auto grid max-w-[1600px] border-x border-line lg:grid-cols-[0.72fr_1.28fr]">
+        <div className="border-line p-5 md:p-8 lg:border-y lg:border-r">
           <p className="mb-8 text-micro font-bold uppercase text-muted">QNA / operating fit</p>
           <h2 className="font-display text-display-md">Questions before the first system map.</h2>
         </div>
-        <div>
+        <div className="border-y border-line">
           {questions.map((item, index) => (
             <div key={item.question} className="border-b border-line last:border-b-0">
               <button

@@ -1,7 +1,6 @@
 import { IBM_Plex_Mono, Noto_Sans_KR, Space_Grotesk } from "next/font/google";
 import "../styles/globals.css";
 import SmoothScrollProvider from "../components/common/SmoothScrollProvider";
-import GradualBlurMemo from "../components/common/GradualBlurEffect";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -32,16 +31,6 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${spaceGrotesk.variable} ${ibmPlexMono.variable} ${notoSansKr.variable}`}>
       <body className="relative min-h-screen">
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
-        <GradualBlurMemo
-          target="parent"
-          position="bottom"
-          height="5rem"
-          strength={2}
-          divCount={5}
-          curve="bezier"
-          exponential
-          opacity={1}
-        />
       </body>
     </html>
   );
