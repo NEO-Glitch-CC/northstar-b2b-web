@@ -46,7 +46,7 @@ export default function NorthStarPhoneMockup() {
   const cardBg = isDark ? 'bg-neutral-900' : 'bg-neutral-50';
 
   return (
-    <div className="flex items-center justify-center p-8 bg-gradient-to-br from-neutral-100 to-neutral-200 min-h-screen">
+    <div className="flex items-center justify-center p-6 bg-gradient-to-br from-neutral-100 to-neutral-200 min-h-screen">
       {/* Phone Frame */}
       <div className="relative">
         {/* Phone outer frame */}

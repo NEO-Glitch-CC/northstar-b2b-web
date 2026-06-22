@@ -22,12 +22,7 @@ export default function Hero() {
 
         const tl = gsap.timeline({ defaults: { ease: "expo.out" } });
 
-        tl.to(".reveal-line", {
-          yPercent: 0,
-          rotate: 0,
-          duration: 1.35,
-          stagger: 0.085
-        })
+        tl.to(".reveal-line", { yPercent: 0, rotate: 0, duration: 1.35, stagger: 0.085, delay: 4 })
           .to(".hero-meta", { autoAlpha: 1, y: 0, duration: 0.9, stagger: 0.08 }, "-=0.65")
           .to(".hero-geometry-line", { scaleX: 1, duration: 1.15, stagger: 0.08 }, "-=0.85")
           .to(".hero-geometry-y", { scaleY: 1, duration: 1.15, stagger: 0.08 }, "<");
@@ -74,8 +69,8 @@ export default function Hero() {
       id="platform"
       className="relative min-h-screen overflow-hidden border-b border-line px-5 pt-[64px] md:px-8 md:pt-16"
     >
-      <div className="mx-auto grid min-h-[calc(100vh-77px)] max-w-[1600px] grid-cols-1 border-x border-line lg:grid-cols-[1.25fr_0.75fr]">
-        <div className="flex flex-col justify-between border-b border-line p-5 md:p-8 lg:border-b-0 lg:border-r">
+      <div className="mx-auto grid min-h-[calc(100vh-100px)] max-w-[1600px] grid-cols-1 border-x border-line lg:grid-cols-[1.25fr_0.75fr]">
+        <div className="flex flex-col justify-around border-b border-line p-5 md:p-8 lg:border-b-0 lg:border-r">
           <div className="grid gap-8">
             <p className="hero-meta font-mono text-micro font-bold uppercase text-muted">
               B2B operating infrastructure / 2026 / 정밀한 시스템
@@ -95,8 +90,8 @@ export default function Hero() {
             </h1>
           </div>
 
-          <div className="grid gap-7 pt-16 md:grid-cols-[0.8fr_1fr] md:items-end">
-            <p className="hero-meta max-w-xl text-body-xl text-charcoal/78">
+          <div className="grid gap-7 md:pt-8 md:grid-cols-[0.8fr_1fr] md:items-end">
+            <p className="hero-meta max-w-xl text-md md:text-lg text-charcoal/78">
               Northstar turns fragmented growth operations into one precise revenue system: tighter workflows, cleaner
               data, faster decisions.
             </p>
@@ -109,38 +104,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* <div
-          className="relative min-h-[520px] p-5 md:p-8"
-          onPointerMove={handlePointerMove}
-          onPointerLeave={handlePointerLeave}
-        >
-          <div ref={geometry} className="absolute inset-5 md:inset-8">
-            <span className="hero-geometry-line absolute left-0 top-0 h-px w-full bg-charcoal" />
-            <span className="hero-geometry-line absolute bottom-0 left-0 h-px w-full bg-charcoal" />
-            <span className="hero-geometry-y absolute left-0 top-0 h-full w-px bg-charcoal" />
-            <span className="hero-geometry-y absolute right-0 top-0 h-full w-px bg-charcoal" />
-            <span className="hero-geometry-line absolute left-0 top-1/3 h-px w-full bg-line" />
-            <span className="hero-geometry-line absolute left-0 top-2/3 h-px w-full bg-line" />
-            <span className="hero-geometry-y absolute left-1/3 top-0 h-full w-px bg-line" />
-            <span className="hero-geometry-y absolute left-2/3 top-0 h-full w-px bg-line" />
-
-            <div className="absolute left-[12%] top-[16%] h-[28%] w-[38%] min-w-[140px] border border-charcoal bg-charcoal text-inverse">
-              <div className="flex h-full flex-col justify-between p-4">
-                <span className="font-mono text-micro font-bold uppercase text-inverse/60">Velocity / 속도</span>
-                <span className="font-display text-6xl leading-none">4.8x</span>
-              </div>
-            </div>
-            <div className="absolute bottom-[14%] right-[10%] h-[34%] w-[42%] border border-charcoal bg-bone">
-              <div className="grid h-full grid-cols-5 items-end gap-2 p-4">
-                {[35, 48, 63, 72, 88].map((height) => (
-                  <span key={height} className="block bg-charcoal odd:bg-signal" style={{ height: `${height}%` }} />
-                ))}
-              </div>
-            </div>
-            <div className="absolute right-[18%] top-[18%] h-24 w-24 rounded-full border border-signal" />
-          </div>
-        </div> */}
-        
         <NorthStarPhoneMockup />
       </div>
     </section>

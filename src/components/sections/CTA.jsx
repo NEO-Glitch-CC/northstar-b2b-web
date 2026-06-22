@@ -188,7 +188,7 @@ export default function CTA() {
             </p>
             <h2
               ref={titleRef}
-              className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.95] tracking-tight overflow-hidden"
+              className="text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold leading-[0.95] tracking-tight overflow-hidden"
             >
               {'Build the operating system your next stage already requires.'
                 .split(' ')
