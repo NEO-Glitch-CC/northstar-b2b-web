@@ -13,6 +13,7 @@ import QNA from "../components/sections/QNA";
 import CTA from "../components/sections/CTA";
 import Pricing from "../components/sections/Pricing";
 import Integrations from "../components/sections/Integrations";
+import Steps from "../components/sections/Steps";
 
 export default function HomePage() {
   return (
@@ -28,6 +29,7 @@ export default function HomePage() {
       <Integrations />
       <Simulator />
       <Pricing />
+      <Steps />
       <Testimonials />
       <QNA />
       <CTA />

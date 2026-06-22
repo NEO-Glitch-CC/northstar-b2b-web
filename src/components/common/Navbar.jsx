@@ -100,11 +100,51 @@ export default function Navbar() {
       onRefresh: readThemeBelowNavbar
     });
 
+    // Hide navbar when entering Steps section
+    const stepsTrigger = ScrollTrigger.create({
+      trigger: "#steps",
+      start: "top 80%",
+      end: "bottom 20%",
+      onEnter: () => {
+        gsap.to(headerRef.current, {
+          y: -100,
+          opacity: 0,
+          duration: 0.5,
+          ease: "power2.inOut"
+        });
+      },
+      onLeave: () => {
+        gsap.to(headerRef.current, {
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          ease: "power2.inOut"
+        });
+      },
+      onEnterBack: () => {
+        gsap.to(headerRef.current, {
+          y: -100,
+          opacity: 0,
+          duration: 0.5,
+          ease: "power2.inOut"
+        });
+      },
+      onLeaveBack: () => {
+        gsap.to(headerRef.current, {
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          ease: "power2.inOut"
+        });
+      }
+    });
+
     requestAnimationFrame(readThemeBelowNavbar);
     window.addEventListener("resize", readThemeBelowNavbar);
 
     return () => {
       trigger.kill();
+      stepsTrigger.kill();
       window.removeEventListener("resize", readThemeBelowNavbar);
       document.documentElement.classList.remove("nav-menu-open");
       syncThemeRef.current = null;
