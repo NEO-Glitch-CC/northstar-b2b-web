@@ -273,15 +273,15 @@ export default function Navbar() {
 
       <div
         ref={menuPanelRef}
-        className="fixed inset-0 z-[80] min-h-screen overflow-hidden bg-charcoal pt-[76px] lg:hidden"
+        className="fixed inset-0 z-[80] min-h-screen overflow-hidden bg-charcoal pt-[64px] lg:hidden"
         aria-hidden={!menuOpen}
       >
-        <span className="mobile-menu-line-x absolute left-0 top-[76px] h-px w-full bg-inverse/20" />
+        <span className="mobile-menu-line-x absolute left-0 top-[64px] h-px w-full bg-inverse/20" />
         <span className="mobile-menu-line-x absolute bottom-4 left-0 h-px w-full bg-inverse/20" />
-        <span className="mobile-menu-line-y absolute left-5 top-[76px] h-[calc(100%-76px)] w-px bg-inverse/20 md:left-8" />
-        <span className="mobile-menu-line-y absolute right-5 top-[76px] h-[calc(100%-76px)] w-px bg-inverse/20 md:right-8" />
+        <span className="mobile-menu-line-y absolute left-5 top-[64px] h-[calc(100%-64px)] w-px bg-inverse/20 md:left-8" />
+        <span className="mobile-menu-line-y absolute right-5 top-[64px] h-[calc(100%-64px)] w-px bg-inverse/20 md:right-8" />
 
-        <div className="mx-5 flex h-[calc(100vh-76px)] flex-col justify-between border-x border-inverse/20 px-5 py-8 md:mx-8 md:px-8">
+        <div className="mx-5 flex h-[calc(100vh-64px)] flex-col justify-between border-x border-inverse/20 px-5 py-8 md:mx-8 md:px-8">
           <div className="text-inverse">
             <div className="mb-8 overflow-hidden">
               <p className="mobile-menu-item text-micro font-bold uppercase text-inverse/48">

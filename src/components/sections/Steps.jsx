@@ -1,14 +1,12 @@
 'use client';
 
-import { useLayoutEffect, useRef, useCallback } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ScrollStack, { ScrollStackItem } from '../common/ScrollStack';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
-
-// ==================== Steps Section ====================
 
 const steps = [
   {
@@ -89,29 +87,26 @@ export default function Steps() {
   const progressLineRef = useRef(null);
   const stepIndicatorsRef = useRef([]);
   const scrollIndicatorRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   useGSAP(
     () => {
       const ctx = gsap.context(() => {
-        // Header reveal
-        gsap.fromTo(
-          '.steps-header > *',
-          { y: 40, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.8,
-            stagger: 0.1,
-            ease: 'power3.out',
-            scrollTrigger: {
-              trigger: '.steps-header',
-              start: 'top 80%',
-              toggleActions: 'play none none none',
-            },
-          }
-        );
-
-        // Progress line & indicators update on scroll
         ScrollTrigger.create({
           trigger: sectionRef.current,
           start: 'top center',
@@ -178,8 +173,12 @@ export default function Steps() {
         }}
       />
 
-      {/* Step Indicators - Sticky */}
-      <div className="sticky top-0 z-50 bg-neutral-950/90 backdrop-blur border-b border-white/10 px-5 md:px-8 py-6">
+      {/* Step Indicators - Fixed positioning */}
+      <div
+        className={`fixed top-0 left-0 right-0 z-[100] bg-neutral-950/95 backdrop-blur-xl border-b border-white/10 px-5 md:px-8 py-6 transition-all duration-300 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'
+        }`}
+      >
         <div className="mx-auto max-w-[1600px]">
           <div className="flex items-center justify-between mb-4">
             <span className="font-mono text-xs font-bold uppercase text-amber-400 tracking-widest">
@@ -376,7 +375,7 @@ export default function Steps() {
       </ScrollStack>
 
       {/* Scroll Indicator */}
-      <div className="sticky bottom-8 z-40 flex justify-center pointer-events-none">
+      {/* <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-40 pointer-events-none">
         <div ref={scrollIndicatorRef} className="bg-white/10 backdrop-blur border border-white/20 rounded-full px-6 py-3 flex items-center gap-3">
           <span className="font-mono text-xs text-white/60 uppercase tracking-wider">
             Scroll to explore
@@ -393,7 +392,7 @@ export default function Steps() {
             <path d="M12 5v14M5 12l7 7 7-7" />
           </svg>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

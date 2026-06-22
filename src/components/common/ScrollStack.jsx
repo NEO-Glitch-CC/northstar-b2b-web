@@ -3,7 +3,7 @@ import Lenis from 'lenis';
 
 export const ScrollStackItem = ({ children, itemClassName = '' }) => (
   <div
-    className={`scroll-stack-card relative w-full h-80 my-8 p-12 rounded-[40px] shadow-[0_0_30px_rgba(0,0,0,0.1)] box-border origin-top will-change-transform ${itemClassName}`.trim()}
+    className={`scroll-stack-card relative w-full my-8 p-8 md:p-12 rounded-[32px] shadow-[0_0_60px_rgba(0,0,0,0.5)] box-border origin-top will-change-transform border border-white/10 bg-neutral-900 ${itemClassName}`.trim()}
     style={{
       backfaceVisibility: 'hidden',
       transformStyle: 'preserve-3d'
@@ -35,6 +35,7 @@ const ScrollStack = ({
   const cardsRef = useRef([]);
   const lastTransformsRef = useRef(new Map());
   const isUpdatingRef = useRef(false);
+  const tickingRef = useRef(false);
 
   const calculateProgress = useCallback((scrollTop, start, end) => {
     if (scrollTop < start) return 0;
@@ -187,7 +188,13 @@ const ScrollStack = ({
   ]);
 
   const handleScroll = useCallback(() => {
-    updateCardTransforms();
+    if (!tickingRef.current) {
+      requestAnimationFrame(() => {
+        updateCardTransforms();
+        tickingRef.current = false;
+      });
+      tickingRef.current = true;
+    }
   }, [updateCardTransforms]);
 
   const setupLenis = useCallback(() => {
@@ -272,7 +279,6 @@ const ScrollStack = ({
     });
 
     setupLenis();
-
     updateCardTransforms();
 
     return () => {
@@ -286,6 +292,7 @@ const ScrollStack = ({
       cardsRef.current = [];
       transformsCache.clear();
       isUpdatingRef.current = false;
+      tickingRef.current = false;
     };
   }, [
     itemDistance,
@@ -303,17 +310,14 @@ const ScrollStack = ({
     updateCardTransforms
   ]);
 
-  // Container styles based on scroll mode
   const containerStyles = useWindowScroll
     ? {
-        // Global scroll mode - no overflow constraints
         overscrollBehavior: 'contain',
         WebkitOverflowScrolling: 'touch',
         WebkitTransform: 'translateZ(0)',
         transform: 'translateZ(0)'
       }
     : {
-        // Container scroll mode - original behavior
         overscrollBehavior: 'contain',
         WebkitOverflowScrolling: 'touch',
         scrollBehavior: 'smooth',
@@ -328,9 +332,8 @@ const ScrollStack = ({
 
   return (
     <div className={containerClassName} ref={scrollerRef} style={containerStyles}>
-      <div className="scroll-stack-inner pt-[20vh] px-20 pb-[50rem] min-h-screen">
+      <div className="scroll-stack-inner pt-[20vh] px-5 md:px-20 pb-[50rem] min-h-screen">
         {children}
-        {/* Spacer so the last pin can release cleanly */}
         <div className="scroll-stack-end w-full h-px" />
       </div>
     </div>
