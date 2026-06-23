@@ -44,7 +44,7 @@ export default function Integrations() {
         };
 
         const createMarqueeTimeline = (selector) => {
-          const track = document.querySelector(selector);
+          const track = sectionRef.current?.querySelector(selector);
           if (!track) return null;
 
           const distance = getMarqueeDistance(track);
