@@ -173,10 +173,10 @@ export default function Integrations() {
 
       {/* Top Marquee */}
       <div className="relative border-y border-charcoal/10 bg-white/50 backdrop-blur-sm">
-        <div className="absolute left-0 inset-y-0 w-1/3 h-full z-5 bg-linear-to-r from-bone to-transparent"/>
-        <div className="absolute left-0 inset-y-0 w-1/3 h-full z-5 bg-linear-to-r from-bone to-transparent"/>
-        <div className="absolute right-0 inset-y-0 w-1/3 h-full z-5 bg-linear-to-l from-bone to-transparent"/>
-        <div className="absolute right-0 inset-y-0 w-1/3 h-full z-5 bg-linear-to-l from-bone to-transparent"/>
+        <div className="absolute left-0 inset-y-0 w-1/3 h-full z-5 bg-gradient-to-r from-bone to-transparent"/>
+        <div className="absolute left-0 inset-y-0 w-1/3 h-full z-5 bg-gradient-to-r from-bone to-transparent"/>
+        <div className="absolute right-0 inset-y-0 w-1/3 h-full z-5 bg-gradient-to-l from-bone to-transparent"/>
+        <div className="absolute right-0 inset-y-0 w-1/3 h-full z-5 bg-gradient-to-l from-bone to-transparent"/>
         <div className="overflow-hidden py-8">
           <div className="marquee-top-track flex gap-10 md:gap-12 w-max will-change-transform">
             <div className="flex shrink-0 gap-10 md:gap-12">
